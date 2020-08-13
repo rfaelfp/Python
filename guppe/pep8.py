@@ -104,4 +104,4 @@ variavel_longa = 10
 
 [7] - Termine sempre uma instrução com uma nova linha
 """
-import this
+# import this
