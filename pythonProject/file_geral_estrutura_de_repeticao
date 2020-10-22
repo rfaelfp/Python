@@ -1,0 +1,21 @@
+import os
+
+tipo = '.txt'
+caminho = input("Digite o caminho: ")
+palavra: str = input("Digite a palavra: ")
+
+arq_geral = open(caminho + "FIND_GERAL.txt", "w")
+arq_geral.write("A palavra digitada foi: " + palavra + "\n\n")
+
+for arquivos in os.listdir(caminho):
+    if tipo in arquivos:
+        arq = open(caminho + arquivos, "r")
+        for linha in arq:
+            if linha.find(palavra):
+                arq_geral.write(f"[<{arquivos}>] <{linha}>")
+    arq.close()
+
+
+arq_geral.close()
+
+
