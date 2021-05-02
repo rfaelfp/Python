@@ -14,7 +14,7 @@ while comport.isOpen():
     temperatura = str(comport.readline())
     temperatura = re.findall(r'\d+', temperatura)
     temperatura = temperatura[0]
-    sql = f"INSERT INTO TemperaturaDados (temperatura, data) values({str(temperatura)},datetime())"
+    sql = f"INSERT INTO TemperaturaDados (temperatura, data) values({str(temperatura)},datetime('now', '-3 hour'))"
     try:
         cursor.execute(sql)
         conn.commit()
